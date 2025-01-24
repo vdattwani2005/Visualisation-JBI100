@@ -10,7 +10,13 @@ def create_layout():
             html.Div(id='total-incidents', className='stat-box'),
             html.Div(id='fatal-incidents', className='stat-box'),
             html.Div(id='species-count', className='stat-box'),
+            html.Div(id='most-dangerous-species', className='stat-box'),
         ], className="stats-row"),
+
+        html.Div([
+            html.H3("Key Insights", className="insights-title"),
+            html.Div(id='insights-content', className="insights-text")
+        ], className="insights-panel"),
 
         # Filters
         html.Div([
@@ -37,6 +43,17 @@ def create_layout():
                     {'label': 'Fishing', 'value': 'Fishing'}
                 ],
                 placeholder="Select Activity",
+                className="filter"
+            ),
+            dcc.Dropdown(
+                id='season-filter',
+                options=[
+                    {'label': 'Summer', 'value': 'Summer'},
+                    {'label': 'Autumn', 'value': 'Autumn'},
+                    {'label': 'Winter', 'value': 'Winter'},
+                    {'label': 'Spring', 'value': 'Spring'}
+                ],
+                placeholder="Select Season",
                 className="filter"
             ),
             dcc.RangeSlider(

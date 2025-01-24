@@ -91,6 +91,11 @@
 .Select-control {
     background-color: #2d2d2d !important;
     border-color: #4a4a4a !important;
+    color: white !important;
+}
+
+.Select-value-label {
+    color: white !important;  /* Add this line */
 }
 
 .Select-menu-outer {
